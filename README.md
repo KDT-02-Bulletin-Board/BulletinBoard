@@ -65,6 +65,15 @@ git push origin 자신이 생성한 브런치 이름 (ex lmw)
 <br/>
 <br/>
 
+![pr4](이민욱/image/pr4.png)
+
+- 만약 위의 화면에서 pr이 뜨지 않으면
+  - Pull requests => New pull request => compare : 자신이 생성한 브런치 이름으로 설정
+  - Create pull request
+
+<br/>
+<br/>
+
 ![pr2](이민욱/image/pr2.png)
 
 - 브런치 확인
