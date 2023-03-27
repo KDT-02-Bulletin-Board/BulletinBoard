@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>게시판 페이지</h1>
+<table>
+  {% for list in postlist %}
+  <ul>
+    <li><a href="{{ list.pk }}">{{ list.title }}</a></li>
+  </ul>
+  {% endfor %}
+</table>
+{% endblock content %}
