@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+{% endblock style %}
+
+
+{% block content %}
+  <h1>best detail</h1>
+  <p>{{post.title}}</p>
+  <p>{{post.content}}</p>
+  <p>{{post.author}}</p>
+  <p>{{post.created_at}}</p>
+  <a href="{% url 'main:best' %}">목록으로 이동</a>
+{% endblock content %}

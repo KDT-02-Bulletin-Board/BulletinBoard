@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+{% endblock style %}
+
+
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    <input type="text" name='title'>
+    <textarea name="content" cols="50" rows="10"></textarea>
+    <input type="text" name='author'>
+    <input type="submit">
+  </form>
+{% endblock content %}
