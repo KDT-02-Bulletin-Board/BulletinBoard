@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 
+{% block title %}
+  BLOG LIST
+{% endblock title %}
+
 {% block content %}
-<h1>게시판 페이지</h1>
-<table>
+  <h1>게시판 페이지</h1>
   {% for list in postlist %}
-  <ul>
-    <li><a href="{{ list.pk }}">{{ list.title }}</a></li>
-  </ul>
+    <ul>
+      <li><a href="{{ list.pk }}/">{{ list.postname }}</a></li>
+    </ul>
   {% endfor %}
-</table>
+  <button><a href="new_post/">글쓰기</a></button>
 {% endblock content %}

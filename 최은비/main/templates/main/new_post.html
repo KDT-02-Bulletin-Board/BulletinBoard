@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  글쓰기 페이지
+{% endblock title %}
+
+{% block content %}
+  <h1>글쓰기 페이지</h1>
+  <form method="POST">
+    {% csrf_token %}
+    제목<br>
+    <input type="text" name="postname"><br>
+    내용<br>
+    <textarea name="contents" id="" cols="50" rows="10"></textarea><br>
+    <input type="file" name="mainphoto"><br>
+    <input type="submit" value="글쓰기">
+  </form>
+{% endblock content %}
