@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 
+{% block title %}
+  Posting
+{% endblock title %}
+
 {% block content %}
-  <h1>posting</h1>
-  <h1>{{ post.title }}</h1>
-  <p>{{ pk }}</p>
-  <p>{{ post.content }}</p>
+  <h1>게시글 개별 페이지</h1>
+  <p>{{ post.postname }}</p>
+  <p>{{ post.contents }}</p>
+  {% if post.mainphoto %}
+    <img src="{{ post.mainphoto.url }}" alt="" height="600">
+    <br>
+  {% endif %}
+  <a href="/blog/{{ post.pk }}/remove">삭제</a>
+  <a href="/blog/">목록</a>
 {% endblock content %}
