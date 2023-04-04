@@ -11,8 +11,7 @@ class Record(models.Model):
     content = models.TextField()
 
     #게시글 삭제시 첨부한 파일 삭제
-    def delete(self, *args, **kwargs):
-        super().delete(*args, **kwargs)
-
+    def delete(self, *args, **kargs):
         if self.imgfile:
-            self.imgfile.delete()
+            os.remove(os.path.join(settings.MEDIA_ROOT, self.imgfile.path))
+        super(Record, self).delete(*args, **kargs)
