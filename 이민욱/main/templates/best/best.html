@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+{% endblock style %}
+
+
+{% block content %}
+  <h1>best main</h1>
+  <a href="{% url 'main:write' %}">글쓰기</a>
+  {% for list in postlist %}
+    <ul>
+      <li>
+        <a href="{% url 'main:detail' list.pk %}">
+          {{list.title}}
+        </a>
+      </li>
+      <li>{{list.content}}</li>
+      <li>{{list.author}}</li>
+      <li>{{list.created_at}}</li>
+    </ul>
+  {% endfor %}
+{% endblock content %}

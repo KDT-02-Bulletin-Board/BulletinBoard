@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  글 삭제
+{% endblock title %}
+
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    <h3>{{ post.postname }} - 삭제하기</h3>
+    <button>삭제</button>
+  </form>
+{% endblock content %}
