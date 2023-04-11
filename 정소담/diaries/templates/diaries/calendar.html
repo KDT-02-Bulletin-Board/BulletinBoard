@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/diary.css' %}">
+<div class="calendar">
+    <div class="calendar_header">
+        <div class="calendar_nav">
+            <button class="nav-btn go-prev">&lt;</button>
+            <span class="year"></span>년|
+            <span class="month"></span>월
+            <button class="nav-btn go-next">&gt;</button>
+            <button class="nav-btn go-today">오늘로 가기</button>
+        </div>
+    </div>
+    <div class="calendar_main">
+        <div class="days">
+            <div class="day">일</div>
+            <div class="day">월</div>
+            <div class="day">화</div>
+            <div class="day">수</div>
+            <div class="day">목</div>
+            <div class="day">금</div>
+            <div class="day">토</div>
+        </div>
+        <div class="dates"></div>
+    </div>
+
+    <!-- 예약 창 -->
+    <div class="resv-wrapper">
+        <div class="resv-bg">
+            <button class="resv-close">X</button>
+            <div class="write_box_modal">
+                <h1>Today record</h1>
+                <div class="write_box__form">
+                    <form action="{% url 'diaries:write' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="btn_box">
+                            <input class="btn btn_style" type="submit" id='submit-button' value="Save">
+                            {% comment %} <a href="{% url 'diaries:diary' %}" class="btn btn_style">Back</a> {% endcomment %}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="{% url 'diaries:diary' %}" class="btn btn_style">뒤로가기</a>
+</div>
+<script src="{% static 'js/calendar.js' %}"></script>
+<script src="{% static 'js/reserve.js' %}"></script>
+{% endblock %}
