@@ -1,3 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
+class User(AbstractUser):
+    birthday = models.DateField(null=True, blank=True)
+    profile_image = models.ImageField(null=True, blank=True)
