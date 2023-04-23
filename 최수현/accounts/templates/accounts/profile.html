@@ -1,0 +1,11 @@
+{% block title %}{{ person }}{% endblock title %}
+
+{% block content %}
+<div class="container">
+  {% if request.user == person %}
+    <h2>마이 페이지</h2>
+  {% else %}
+    <h2>{{ person }}님의 프로필</h2>
+  {% endif %}
+</div>
+{% endblock content %}
