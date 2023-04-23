@@ -1,0 +1,17 @@
+{% block title %}회원 가입{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <h2>회원 가입</h2>
+  <form action="{% url 'accounts:create' %}" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-floating">
+        <label for="{{ field.auto_id }}">{{ field.label }}</label>
+      </div>
+    {% endfor %}
+    <input type="submit" value="회원 가입" class="btn">
+  </form>
+</div>
+
+{% endblock content %}

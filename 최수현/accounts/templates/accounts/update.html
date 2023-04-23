@@ -1,0 +1,17 @@
+{% block title %}회원정보 수정{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <h2>회원정보 수정</h2>
+  <form action="{% url 'accounts:update' %}" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-floating">
+        <label for="{{ field.auto_id }}">{{ field.label }}</label>
+      </div>
+    {% endfor %}
+    <input type="submit" value="회원정보 수정" class="btn">
+  </form>
+</div>
+
+{% endblock content %}

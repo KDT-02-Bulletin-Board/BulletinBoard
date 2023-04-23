@@ -1,0 +1,17 @@
+{% block title %}로그인{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <h2>로그인</h2>
+  <form action="{% url 'accounts:login' %}" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-floating">
+        <label for="{{ field.auto_id }}">{{ field.label }}</label>
+      </div>
+    {% endfor %}
+    <input type="submit" value="로그인" class="btn">
+  </form>
+</div>
+
+{% endblock content %}
